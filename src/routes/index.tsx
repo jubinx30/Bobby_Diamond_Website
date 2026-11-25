@@ -109,16 +109,19 @@ function Index() {
             </div>
           </div>
 
-          {/* Right Column: Hero PNG Image directly on background */}
+          {/* Right Column: Hero PNG Image with softened edges and fade effect */}
           <div className="animate-rise lg:col-span-5 relative flex items-center justify-center" style={{ animationDelay: "220ms" }}>
             {/* Ambient warm glow behind the figure */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[380px] rounded-full bg-primary/20 blur-[110px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
 
-            <img
-              src={bobbyHero}
-              alt="Bobby Diamond singing with a microphone"
-              className="relative z-10 w-full max-w-lg lg:max-w-none h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.7)] select-none"
-            />
+            {/* Faded image container: dissolves bottom cutoff line & softens outer cutout edges */}
+            <div className="relative z-10 w-full max-w-lg lg:max-w-none hero-bottom-fade">
+              <img
+                src={bobbyHero}
+                alt="Bobby Diamond singing with a microphone"
+                className="w-full h-auto object-contain select-none hero-image-fade drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+              />
+            </div>
           </div>
         </div>
 
