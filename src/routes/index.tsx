@@ -50,11 +50,7 @@ function Index() {
           {/* Left Column: Headline, Copy, Action Buttons, Trust Highlights */}
           <div className="lg:col-span-7">
             {/* Tagline / Brand Badge */}
-            <div className="animate-rise inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary" style={{ animationDelay: "100ms" }}>
-              <span className="inline-block h-0.5 w-4 bg-primary/70" />
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              <span>BOBBY DIAMOND ENTERTAINMENT</span>
-            </div>
+            
 
             {/* Main Headline with italic styling */}
             <h1 className="animate-rise mt-5 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl leading-[1.06]" style={{ animationDelay: "180ms" }}>
