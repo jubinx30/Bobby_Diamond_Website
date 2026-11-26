@@ -357,9 +357,21 @@ function Packages() {
 
       {/* Tailored For Your Event Showcase */}
       <section className="mx-auto mt-28 max-w-6xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
-          {/* Left Column: Image with overlay badge */}
-          <div className="lg:col-span-5">
+        <Reveal className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            Tailored Repertoire
+          </p>
+          <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
+            Customized for Every Occasion
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+            No two events are alike. Bobby works directly with you to craft a customized musical program suited to your guests' age groups and musical tastes.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-12">
+          {/* Left Column: Image with card below */}
+          <div className="flex flex-col gap-4 lg:col-span-5">
             <Reveal>
               <div className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-2xl">
                 <img
@@ -367,39 +379,28 @@ function Packages() {
                   alt="Bobby Diamond performing live at restaurants, dinner parties, weddings and office parties"
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-primary/30 bg-slate-900/90 p-4 backdrop-blur-md">
-                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">
-                    New England & Beyond
-                  </p>
-                  <p className="text-sm font-medium text-slate-200">
-                    Captivating audiences at private venues, country clubs & grand ballrooms for over 30 years.
-                  </p>
-                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="rounded-2xl border border-border bg-card/60 p-5 transition-all duration-300 hover:border-primary/40">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                  New England & Beyond
+                </p>
+                <p className="mt-1 text-sm font-medium leading-relaxed text-slate-200">
+                  Captivating audiences at private venues, country clubs & grand ballrooms for over 30 years.
+                </p>
               </div>
             </Reveal>
           </div>
 
           {/* Right Column: Event Occasion Cards */}
-          <div className="lg:col-span-7 space-y-4">
-            <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                Tailored Repertoire
-              </p>
-              <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
-                Customized for Every Occasion
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                No two events are alike. Bobby works directly with you to craft a customized musical program suited to your guests' age groups and musical tastes.
-              </p>
-            </Reveal>
-
-            <div className="grid gap-4 pt-4 sm:grid-cols-2">
+          <div className="lg:col-span-7">
+            <div className="grid gap-4 sm:grid-cols-2">
               {EVENT_OCCASIONS.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <Reveal key={item.title} delay={idx * 80}>
-                    <div className="rounded-2xl border border-border bg-card/60 p-5 transition-all duration-300 hover:border-primary/40">
+                    <div className="h-full rounded-2xl border border-border bg-card/60 p-5 transition-all duration-300 hover:border-primary/40">
                       <div className="flex items-center gap-3">
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                           <Icon className="h-5 w-5" />
