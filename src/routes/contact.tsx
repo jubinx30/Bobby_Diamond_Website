@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { useState } from "react";
-import { Phone, Mail, CalendarHeart } from "lucide-react";
+import { Phone, Mail, CalendarHeart, Clock, Music2, Sparkles, MapPin } from "lucide-react";
 import { PageHeader, Reveal } from "@/components/site/Reveal";
 import { EMAIL, PHONE } from "@/components/site/Layout";
 
@@ -128,6 +128,68 @@ function Contact() {
               Send inquiry
             </button>
           </form>
+        </Reveal>
+      </section>
+
+      {/* Booking Details & What to Expect */}
+      <section className="mx-auto mt-16 max-w-5xl px-6">
+        <Reveal>
+          <div className="rounded-3xl border border-border/70 bg-card/50 p-8 sm:p-10 md:p-12 backdrop-blur-sm">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="font-[family-name:var(--font-script)] text-2xl sm:text-3xl text-accent">
+                Peace of Mind
+              </span>
+              <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl font-semibold text-foreground sm:text-3xl">
+                What to expect when you book
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Whether planning an intimate private gathering or a grand ballroom gala, booking live entertainment should be straightforward, personal, and stress-free.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              <div className="rounded-2xl border border-border/60 bg-card/60 p-6 transition-colors hover:border-primary/50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+                  <Clock className="h-5 w-5" />
+                </div>
+                <h4 className="mt-4 font-semibold text-foreground">Direct & Fast Response</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Bobby handles each inquiry personally. Expect a prompt response within 24 to 48 hours to confirm availability and discuss details.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-border/60 bg-card/60 p-6 transition-colors hover:border-primary/50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+                  <Music2 className="h-5 w-5" />
+                </div>
+                <h4 className="mt-4 font-semibold text-foreground">Tailored Repertoire</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Select your favorites from Bobby's 1,200+ song library, or let him curate the musical flow from cocktail hour through the grand finale.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-border/60 bg-card/60 p-6 transition-colors hover:border-primary/50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <h4 className="mt-4 font-semibold text-foreground">Complete Audio & Setup</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Professional sound equipment, wireless mics, and live percussion provided — tailored seamlessly to any indoor or outdoor venue.
+                </p>
+              </div>
+            </div>
+
+            {/* Service Footnote */}
+            <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center text-xs text-muted-foreground sm:flex-row sm:text-left sm:text-sm">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                <span>Serving Massachusetts, Rhode Island, Connecticut, New England, and events nationwide.</span>
+              </div>
+              <p className="text-slate-400">
+                Need an immediate answer? Call <a href={`tel:${PHONE}`} className="font-medium text-primary hover:underline">{PHONE}</a>
+              </p>
+            </div>
+          </div>
         </Reveal>
       </section>
     </>
