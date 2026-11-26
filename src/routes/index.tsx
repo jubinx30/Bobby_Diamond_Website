@@ -1,10 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Mic2,
   Music,
   PartyPopper,
   ArrowRight,
-  ArrowDownRight,
+  Search,
   Target,
   Sparkles,
   ShieldCheck,
@@ -38,6 +39,22 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [songQuery, setSongQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSongSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const query = songQuery.trim();
+    navigate({
+      to: "/songs",
+      search: {
+        q: query,
+        field: "all",
+        page: 1,
+      },
+    });
+  };
+
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-12">
@@ -64,22 +81,40 @@ function Index() {
               At Bobby Diamond Entertainment, we connect audiences with standing-room-only live vocals, dynamic percussion, and masterful event hosting throughout New England and beyond. With an extensive repertoire spanning over 1,200 classics and modern hits, we ensure every wedding, corporate party, and gala is an extraordinary success.
             </p>
 
-            {/* Action Buttons */}
-            <div className="animate-rise mt-8 flex flex-wrap items-center gap-4" style={{ animationDelay: "380ms" }}>
+            {/* Action Buttons & Song Finder Search */}
+            <div className="animate-rise mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4" style={{ animationDelay: "380ms" }}>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
               >
                 Schedule a consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/packages"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/60 hover:bg-slate-800/80 hover:border-primary/60 hover:text-primary px-7 py-3.5 text-sm font-medium text-slate-200 backdrop-blur-sm transition-all duration-300"
+              <form
+                onSubmit={handleSongSearch}
+                className="group relative w-full sm:w-72 md:w-80"
               >
-                Learn more
-                <ArrowDownRight className="h-4 w-4" />
-              </Link>
+                {/* Faint golden glow behind borders */}
+                <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary/30 via-primary/50 to-primary/30 blur-[6px] opacity-70 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                <div className="relative flex items-center">
+                  <button
+                    type="submit"
+                    aria-label="Search songs"
+                    className="absolute left-3.5 flex items-center justify-center text-slate-400 group-focus-within:text-gold hover:text-gold transition-colors focus:outline-none"
+                  >
+                    <Search className="h-4 w-4" />
+                  </button>
+                  <input
+                    type="text"
+                    value={songQuery}
+                    onChange={(e) => setSongQuery(e.target.value)}
+                    placeholder="Search 1,200+ songs..."
+                    aria-label="Search song repertoire"
+                    className="w-full rounded-full border border-primary/40 bg-slate-950/80 pl-10 pr-4 py-3.5 text-sm text-slate-200 placeholder:text-slate-400/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 focus:border-gold focus:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-gold/60 shadow-[0_0_12px_oklch(0.82_0.13_85/0.12)]"
+                  />
+                </div>
+              </form>
             </div>
 
             {/* Trust / Capability Badges */}
@@ -147,7 +182,7 @@ function Index() {
         {[
           { icon: Music, n: `${SONGS.length.toLocaleString()}+`, t: "Songs in the repertoire", to: "/songs" as const },
           { icon: PartyPopper, n: "Every", t: "Wedding, birthday & office party", to: "/packages" as const },
-          { icon: Mic2, n: "Live", t: "Vocals & percussion, own arrangements", to: "/videos" as const },
+          { icon: Mic2, n: "Live", t: "Vocals & Percussion", to: "/videos" as const },
         ].map((c, i) => (
           <Reveal key={c.t} delay={i * 120}>
             <Link to={c.to} className="group block rounded-2xl border border-border bg-card/60 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-glow">
