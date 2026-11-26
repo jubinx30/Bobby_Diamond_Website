@@ -26,7 +26,7 @@ export function Header() {
         <Link to="/" className="font-[family-name:var(--font-display)] text-2xl tracking-wide"><span className="text-gold">Bobby Diamond</span></Link>
         <nav className="hidden gap-8 md:flex">
           {NAV.map((n) => (
-            <Link key={n.to} to={n.to} activeOptions={{ exact: true }} className="relative text-sm uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary data-[status=active]:text-primary after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full data-[status=active]:after:w-full">{n.label}</Link>
+            <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/", includeSearch: false }} className="relative text-sm uppercase tracking-[0.18em] text-white transition-colors hover:text-primary data-[status=active]:text-primary after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full data-[status=active]:after:w-full">{n.label}</Link>
           ))}
         </nav>
         <div className="hidden items-center gap-6 lg:flex">
@@ -47,7 +47,7 @@ export function Header() {
       {open && (
         <nav className="animate-rise flex flex-col gap-1 px-6 pb-6 md:hidden">
           {NAV.map((n) => (
-            <Link key={n.to} to={n.to} onClick={() => setOpen(false)} activeOptions={{ exact: true }} className="py-3 text-lg font-[family-name:var(--font-display)] text-foreground border-b border-border data-[status=active]:text-primary">{n.label}</Link>
+            <Link key={n.to} to={n.to} onClick={() => setOpen(false)} activeOptions={{ exact: n.to === "/", includeSearch: false }} className="py-3 text-lg font-[family-name:var(--font-display)] text-white border-b border-border data-[status=active]:text-primary">{n.label}</Link>
           ))}
         </nav>
       )}

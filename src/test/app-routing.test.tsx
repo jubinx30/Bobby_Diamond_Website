@@ -14,4 +14,11 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches /songs and /contact routes", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes("/songs").at(-1)?.routeId).toBe("/songs");
+    expect(router.matchRoutes("/contact").at(-1)?.routeId).toBe("/contact");
+  });
 });

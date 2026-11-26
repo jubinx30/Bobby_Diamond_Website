@@ -150,7 +150,7 @@ function Index() {
               <img
                 src={bobbyHero}
                 alt="Bobby Diamond singing with a microphone"
-                className="w-full h-auto object-contain select-none hero-image-fade drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                className="w-full h-auto object-contain select-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
               />
             </div>
           </div>
