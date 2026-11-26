@@ -68,7 +68,7 @@ The agent can then edit files directly — everything the site needs is in this 
 
 `bun run build` produces `dist/` (Cloudflare Worker output via Nitro).
 Deploy with `npx wrangler deploy` from `dist/`, or `npx nitro deploy --prebuilt`.
-Any Node host works too: `bun run preview`.
+Any Node host works too: `bun run preview` .
 
 ## Built with
 
