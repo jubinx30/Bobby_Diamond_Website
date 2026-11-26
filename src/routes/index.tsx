@@ -98,21 +98,21 @@ function Index() {
                 <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary/30 via-primary/50 to-primary/30 blur-[6px] opacity-70 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 <div className="relative flex items-center">
-                  <button
-                    type="submit"
-                    aria-label="Search songs"
-                    className="absolute left-3.5 flex items-center justify-center text-slate-400 group-focus-within:text-gold hover:text-gold transition-colors focus:outline-none"
-                  >
-                    <Search className="h-4 w-4" />
-                  </button>
                   <input
                     type="text"
                     value={songQuery}
                     onChange={(e) => setSongQuery(e.target.value)}
-                    placeholder="Search 1,200+ songs..."
+                    placeholder="Search 1200+ songs from my repertoire..."
                     aria-label="Search song repertoire"
-                    className="w-full rounded-full border border-primary/40 bg-slate-950/80 pl-10 pr-4 py-3.5 text-sm text-slate-200 placeholder:text-slate-400/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 focus:border-gold focus:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-gold/60 shadow-[0_0_12px_oklch(0.82_0.13_85/0.12)]"
+                    className="w-full rounded-full border border-primary/40 bg-slate-950/80 pl-5 pr-12 py-3.5 text-sm text-slate-200 placeholder:text-slate-400/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 focus:border-gold focus:bg-slate-900 focus:outline-none focus:ring-1 focus:ring-gold/60 shadow-[0_0_12px_oklch(0.82_0.13_85/0.12)]"
                   />
+                  <button
+                    type="submit"
+                    aria-label="Search songs"
+                    className="absolute right-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-gold text-primary-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-gold/60 active:scale-95"
+                  >
+                    <Search className="h-4 w-4 stroke-[2.5]" />
+                  </button>
                 </div>
               </form>
             </div>
