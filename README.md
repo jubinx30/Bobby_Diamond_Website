@@ -76,3 +76,4 @@ Any Node host works too: `bun run preview`.
 - TypeScript
 - React
 - Tailwind CSS
+- Vite
