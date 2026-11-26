@@ -107,7 +107,7 @@ function Videos() {
                   <h3 className="font-[family-name:var(--font-display)] text-xl font-medium tracking-tight text-foreground transition-colors duration-300 group-hover:text-gold">
                     {v.title}
                   </h3>
-                  
+
                   <div className="mt-3 flex items-center justify-between border-t border-border/60 pt-3 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Sparkles className="h-3.5 w-3.5 text-primary/70" />
@@ -149,7 +149,7 @@ function Videos() {
       </section>
 
       {/* Quote Section from Syndicated Columnist Ross Martin */}
-      <section className="relative mx-auto mt-24 max-w-5xl px-6 pb-24">
+      <section className="relative mx-auto mt-24 max-w-5xl px-6 pb-0">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-b from-card/90 via-card/50 to-slate-950/90 p-8 sm:p-12 md:p-16 text-center shadow-[0_0_50px_oklch(0.82_0.13_85/0.1)] backdrop-blur-xl">
             {/* Ambient Star Field & Glow */}

@@ -194,7 +194,7 @@ function Index() {
         ))}
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+      <section className="mx-auto max-w-4xl px-6 mt-24 mb-12 text-center">
         <Reveal>
           <h2 className="text-4xl md:text-5xl">Standing room only.</h2>
           <p className="mt-6 text-lg text-muted-foreground">

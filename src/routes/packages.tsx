@@ -498,7 +498,7 @@ function Packages() {
       </section>
 
       {/* Bottom Conversion Banner */}
-      <section className="mx-auto mt-28 max-w-5xl px-6 pb-20">
+      <section className="mx-auto mt-28 max-w-5xl px-6 pb-0">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-to-tr from-card via-card/90 to-primary/10 p-8 md:p-14 text-center shadow-2xl">
             <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
